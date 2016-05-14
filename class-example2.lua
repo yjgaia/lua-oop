@@ -1,34 +1,22 @@
-function CLASS(define)
+require 'oop'
 
-	return {
-		new = function()
-			
-			local object = {}
-			
-			define.init(object)
-			
-			return object
-		end
-	}
-end
+SampleClass = class({
 
-SampleClass = CLASS({
+	init = function(inner, self)
 
-	init = function(self)
-		
 		local messsage
-		
+
 		local setMessage = function(_message)
 			message = _message
 		end
-		
+
 		local showMessage = function()
 			print(message)
 		end
-		
+
+		-- public
 		self.setMessage = setMessage
 		self.showMessage = showMessage
-		
 	end
 })
 
